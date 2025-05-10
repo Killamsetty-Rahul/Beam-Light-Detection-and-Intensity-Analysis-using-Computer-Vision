@@ -2,7 +2,9 @@
 Welcome to my computer vision project where I’ve developed a system to detect and analyze beam light intensity from images. The main aim of this project is to identify bright light sources in images (like vehicle headlights) and recommend whether a beamlight dimming action is needed — a step towards improving night-time driving safety.
 
 📌 Project Overview
-This project uses image processing techniques and computer vision libraries like OpenCV, imutils, and scikit-image to detect intense beam lights from images. It performs:
+This project uses image processing techniques and computer vision libraries like OpenCV, imutils, and scikit-image to detect intense beam lights from images. 
+
+It performs:
 
 Detection of bright regions (like beam lights) in images.
 
@@ -22,8 +24,8 @@ Beam-Light-Detection-and-Intensity-Analysis-using-Computer-Vision/
 │
 ├── beam_light_detection_in_image.py       # Main Python program
 ├── Dataset.zip                            # Compressed folder containing image dataset
-├── README.md                              # Project description and instructions (this file)
-└── (Extracted Dataset folder after running code)
+└── README.md                              # Project description and instructions (this file)
+
 📸 Sample Output
 The code processes each image, detects bright spots, and shows:
 
@@ -112,24 +114,6 @@ Recommendations for beamlight dimming based on intensity thresholds.
 Visual outputs provide intuitive insights for each test case.
 
 Summary graph displays test-wise beamlight intensity and detection accuracy.
-
-🤝 Contributions & Improvements
-This is a basic implementation aimed at static image analysis. Future enhancements could include:
-
-Real-time video stream processing.
-
-Integrating machine learning for adaptive thresholding.
-
-Mobile or embedded device deployment for in-vehicle systems.
-
-Contributions, suggestions, or improvements are always welcome!
-
-📣 Acknowledgements
-Special thanks to:
-
-Open-source Python libraries for making computer vision accessible.
-
-Google Colab for providing a hassle-free development environment.
 
 📬 Contact
 If you have any queries or suggestions, feel free to connect with me!
