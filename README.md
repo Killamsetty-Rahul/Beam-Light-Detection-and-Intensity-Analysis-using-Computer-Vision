@@ -1,4 +1,5 @@
-🚘 Beam Light Detection and Intensity Analysis using Computer Vision
+**🚘 Beam Light Detection and Intensity Analysis using Computer Vision**
+
 Welcome to my project on Beam Light Detection and Intensity Analysis using Computer Vision!
 This project focuses on identifying vehicle headlights (beam lights) in both images and video streams, analyzing how bright they are, and deciding whether a beam dimming action is needed. The idea is simple — improve night-time driving safety by minimizing glare from oncoming vehicles.
 
