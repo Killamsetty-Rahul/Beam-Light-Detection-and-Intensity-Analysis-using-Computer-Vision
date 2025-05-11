@@ -1,78 +1,26 @@
-📸 Beam Light Detection and Intensity Analysis using Computer Vision
-Welcome to my computer vision project where I’ve developed a system to detect and analyze beam light intensity from images. The main aim of this project is to identify bright light sources in images (like vehicle headlights) and recommend whether a beamlight dimming action is needed — a step towards improving night-time driving safety.
+🚘 Beam Light Detection and Intensity Analysis using Computer Vision
+Welcome to my project on Beam Light Detection and Intensity Analysis using Computer Vision!
+This project focuses on identifying vehicle headlights (beam lights) in both images and video streams, analyzing how bright they are, and deciding whether a beam dimming action is needed. The idea is simple — improve night-time driving safety by minimizing glare from oncoming vehicles.
 
-📌 Project Overview
-This project uses image processing techniques and computer vision libraries like OpenCV, imutils, and scikit-image to detect intense beam lights from images. 
+📖 About the Project
+When you drive at night, the glare from other vehicles’ high-beam headlights can be dangerously blinding. Although modern cars are starting to feature automatic headlight dimming systems, many of them either require expensive hardware or rely on complex deep learning models that aren't always ideal for real-time use.
 
-It performs:
+So, for this project, I built a lightweight, efficient, and effective system using Python and OpenCV. It detects beam lights from images and video frames, measures their intensity, and gives a recommendation whether dimming is required — all without the need for heavy hardware or resource-hungry AI models.
 
-Detection of bright regions (like beam lights) in images.
+📂 What’s Inside This Repository
+This repository includes everything you need to test both image-based and video-based beam light detection:
 
-Analysis of their intensity levels and pixel concentration.
+Beam Light Detection in Image.py → Detects beam lights in static images.
 
-Suggests whether a beamlight dim action is needed.
+Beam Light Detection in Video.py → Detects beam lights frame-by-frame in video.
 
-Visual representation of detection results and grayscale histograms.
+Dataset.zip → Contains sample images for testing the image detection script.
 
-Plots of beam light intensity levels and detection accuracy for different test cases.
+video-2.mp4 → A sample video to test the video detection script.
 
-📂 Project Structure
-python
-Copy
-Edit
-Beam-Light-Detection-and-Intensity-Analysis-using-Computer-Vision/
-│
-├── beam_light_detection_in_image.py       # Main Python program
-├── Dataset.zip                            # Compressed folder containing image dataset
-└── README.md                              # Project description and instructions (this file)
+README.md → The project overview you’re reading now.
 
-📸 Sample Output
-The code processes each image, detects bright spots, and shows:
-
-The original image with detected bright regions circled.
-
-A histogram of grayscale intensities.
-
-Console logs with intensity and bright pixel count for each detected cluster.
-
-Whether beamlight dimming is required for that case.
-
-A summary plot of intensity levels and detection accuracy rates across test cases.
-
-🔧 How It Works
-Image Preprocessing:
-
-Convert the image to grayscale.
-
-Apply Gaussian blur to smoothen it.
-
-Threshold to isolate bright regions.
-
-Perform erosion and dilation to remove noise.
-
-Detection:
-
-Label connected components in the binary image.
-
-Filter clusters based on pixel size constraints.
-
-Detect contours for the remaining bright spots.
-
-Analysis:
-
-Calculate the mean intensity and bright pixel count for each cluster.
-
-Determine whether beamlight dimming is needed based on set thresholds.
-
-Visualization:
-
-Display processed images with highlighted beam spots.
-
-Show grayscale intensity histograms.
-
-Generate a dual-axis plot comparing beam intensity and detection accuracy.
-
-📊 Libraries Used
+📚 Libraries Used
 OpenCV
 
 imutils
@@ -86,37 +34,58 @@ matplotlib
 shutil, os, zipfile, time, pathlib (for file and folder management)
 
 🚀 How to Run the Project
-Note: The original code is designed for Google Colab, but you can easily adapt it for local execution by modifying paths.
+Note: The original code is designed for Google Colab, but you can easily adapt it for local execution by adjusting the file paths.
 
 📌 On Google Colab:
-Upload Dataset.zip and beam_light_detection_in_image.py to your Google Drive.
+Upload Dataset.zip and Beam Light Detection in Image.py to your Google Drive.
 
 Open the Colab notebook or script.
 
-Update the drive_path in the code with your correct Drive location if needed.
+Update the drive_path variable in the code with the correct path to your Drive location.
 
 Run the entire script.
 
-The images from Dataset.zip will be extracted and processed.
+The images from Dataset.zip will be extracted, processed one by one, and detection results will be displayed visually.
 
-Results will be displayed one by one.
+Summary intensity histograms and graphs will appear at the end.
 
-Summary plots will appear at the end.
+📸 For Video Detection:
+Upload video-2.mp4 and Beam Light Detection in Video.py to your Google Drive.
 
-🎯 Sample Dataset
-The dataset consists of images containing beam lights of varying intensities captured in night-time driving conditions. You can replace these images with your own test images — just ensure they're placed inside the Dataset folder (after extraction).
+Open the Colab notebook or script.
 
-📈 Performance & Results
-Bright light clusters are successfully detected and analyzed in all test images.
+Update the drive_path variable in the code with the correct path to your Drive location.
 
-Recommendations for beamlight dimming based on intensity thresholds.
+Run the entire script.
 
-Visual outputs provide intuitive insights for each test case.
+The script will process the video frame-by-frame, detect beam light regions in real-time, display detection overlays, and plot live grayscale histograms for intensity analysis.
 
-Summary graph displays test-wise beamlight intensity and detection accuracy.
+✨ Features
+Detects vehicle beam lights in both images and video.
 
-📬 Contact
-If you have any queries or suggestions, feel free to connect with me!
+Measures the average intensity and bright pixel count within detected light regions.
 
-Killamsetty Rahul
-📧 killamsettyrahul05@gmail.com
+Provides real-time feedback on whether a beamlight dimming action is needed.
+
+Works reliably in varied conditions — fog, rain, tunnels, curved roads, and dense city lights.
+
+Lightweight and fast — no deep learning models or special hardware required.
+
+Includes clear visual feedback by highlighting detected beam regions and displaying intensity values.
+
+⚙️ How It Works
+The system follows a straightforward but effective computer vision workflow:
+
+Preprocess the image/video frame by resizing, converting it to grayscale, and applying Gaussian blur to remove noise.
+
+Apply adaptive thresholding to isolate bright regions (potential headlights).
+
+Use morphological operations like erosion and dilation to clean up the result.
+
+Label and analyze connected bright regions using contour detection.
+
+Measure the intensity and bright pixel count for each detected region.
+
+Decide if dimming is required based on configurable intensity and pixel count thresholds.
+
+Show visual output with highlighted detections, intensity values, and a grayscale intensity histogram.
